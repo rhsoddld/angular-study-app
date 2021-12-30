@@ -48,3 +48,4 @@ Thumbs.db
 
 # Config files
 /server/config/dev.js
+/server/config/dev-stock.js
