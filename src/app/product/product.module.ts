@@ -4,6 +4,8 @@ import { ProductListComponent } from './product-listing/product-listing.componen
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProductComponent } from './product.component';
+import { ProductService } from './shared/product.service';
+import { HttpClientModule } from '@angular/common/http';    // http req, res for api (https://angular.jp/guide/http)
 
 
 const routes: Routes = [
@@ -24,10 +26,14 @@ const routes: Routes = [
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
 
-  providers: [],
+  // service definition
+  providers: [
+    ProductService  // <<--- shared/product.service.ts
+  ],    
   bootstrap: []
 })
 export class ProductModule { }

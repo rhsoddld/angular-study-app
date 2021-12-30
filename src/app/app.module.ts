@@ -13,6 +13,9 @@ import { NavbarComponent } from './common/navbar/navbar.component';
 // import { StockComponent } from './stock/stock.component';
 // --> stock.module.ts
 
+import { HttpClientModule } from '@angular/common/http';    // http req, res for api (https://angular.jp/guide/http)
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,8 @@ import { NavbarComponent } from './common/navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
