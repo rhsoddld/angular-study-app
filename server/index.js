@@ -4,7 +4,7 @@ const config = require('./config/dev')
 const FakeDb = require('./fake-db')
 
 
-const productRoutes = require('./routes/products');
+const productRoutes = require('./routes/products')
 
 
 // mongodb+srv://xxxxxxxx:xxxxxxx@clusterxxxxxx.XXXXXXXXXX.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
