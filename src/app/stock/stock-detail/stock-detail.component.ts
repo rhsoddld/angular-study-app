@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { StockService } from '../shared/stock.service';
 // Receive Param from route
 import { stocks } from '../stocks';
 
@@ -12,12 +13,23 @@ export class StockDetailComponent implements OnInit {
 
   stock: any;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private stockService: StockService
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.stock = stocks[+params.get("stockId")!]
+      // this.stock = stocks[+params.get("stockId")!]
+      const stockObservable = this.stockService.getStockById(params.get('stockId')!)
+      stockObservable.subscribe(
+        (data) => {
+          this.stock = data
+        },
+        (err) => {
+          console.log(err)
+        }
+      )
     })
   }
-
 }
