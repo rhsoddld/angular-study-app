@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { StockComponent } from './stock.component';
 import { StockListComponent } from './stock-list/stock-list.component';
 import { StockDetailComponent } from './stock-detail/stock-detail.component';
+import { StockService } from './shared/stock.service';
 
 const routes: Routes = [
     { 
@@ -25,7 +26,9 @@ const routes: Routes = [
         RouterModule.forChild(routes),
         CommonModule
     ],
-    providers: [],
+    providers: [
+        StockService, // <<--- shared/stock.service.ts
+    ],
     bootstrap: []
 })
 
