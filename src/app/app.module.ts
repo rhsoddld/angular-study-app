@@ -14,12 +14,19 @@ import { NavbarComponent } from './common/navbar/navbar.component';
 // --> stock.module.ts
 
 import { HttpClientModule } from '@angular/common/http';    // http req, res for api (https://angular.jp/guide/http)
+// import { LoginComponent } from './auth/login/login.component';
+// import { RegisterComponent } from './register/register.component';
+// import { AuthComponent } from './auth/auth.component';
+// --> auth.module.ts
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    // LoginComponent,  --> auth.module.ts
+    // RegisterComponent, --> auth.module.ts
+    // AuthComponent,
     // StockDetailComponent, --> stock.module.ts
     // StockSummaryComponent, --> stock.module.ts
     // StockComponent,
