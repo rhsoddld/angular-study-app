@@ -1,34 +1,36 @@
-<div class="container">
-    <div class="myclass">
-        <h1>Style TEST</h1>
-        <h2>Style TEST</h2>
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('./assets/img/fabio-mangione.jpg');">
+        <div class="filter"></div>
     </div>
-    <div class="row">
-        <div *ngFor="let product of products; let productId = index" class="col-sm">
-            <!-- <a [routerLink]="[ productId ]"> -->
-            <a [routerLink]="[ product._id ]">
-                <div class="card">
-                    <img src="{{ product.coverImage }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ product.name }}</h5> 
-                        <p class="card-text">{{ product.description }}</p>
+    <div class="container">
+        <br>
+        <div class="row">
+            <div *ngFor="let product of products; let productId = index" class="col-sm">
+                <!-- <a [routerLink]="[ productId ]"> -->
+                <a [routerLink]="[ product._id ]">
+                    <div class="card">
+                        <img src="{{ product.coverImage }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5> 
+                            <p class="card-text">{{ product.description }}</p>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
+        <!-- <div *ngFor="let product of products; let productId = index">
+            <h3>
+                <a [title]="product.name + 'detail'"
+                [routerLink]="['/products', productId]"
+                >
+                {{ product.name }}
+                </a>
+            </h3>
+            <p *ngIf="product.description">
+                content: {{ product.description }}
+            </p>
+        </div> -->
     </div>
-    <!-- <div *ngFor="let product of products; let productId = index">
-        <h3>
-            <a [title]="product.name + 'detail'"
-            [routerLink]="['/products', productId]"
-            >
-            {{ product.name }}
-            </a>
-        </h3>
-        <p *ngIf="product.description">
-            content: {{ product.description }}
-        </p>
-    </div> -->
 </div>
 
   
