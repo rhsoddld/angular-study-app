@@ -5,6 +5,7 @@ import { AuthComponent } from './auth.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './shared/auth.service';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
+    FormsModule,    //template driven
   ],
 
   // service definition
