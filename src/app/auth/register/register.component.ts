@@ -31,6 +31,6 @@ export class RegisterComponent implements OnInit {
             }
 
         )
-        // console.log(registerForm.value)
+         console.log(registerForm.value)
     }
 }

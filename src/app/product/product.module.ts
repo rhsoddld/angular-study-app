@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProductComponent } from './product.component';
 import { ProductService } from './shared/product.service';
+import { AuthGuard } from '../auth/shared/auth.guard';
+import { ProductTmpComponent } from './product-tmp/product-tmp.component';
 
 
 const routes: Routes = [
@@ -12,7 +14,8 @@ const routes: Routes = [
     path: 'products', component: ProductComponent, 
     children: [
     { path: '', component: ProductListComponent },
-    { path: ':productId', component: ProductDetailComponent },
+    { path: ':productId', component: ProductDetailComponent, canActivate: [AuthGuard]},
+    { path: 'tmp/:productId', component: ProductTmpComponent },
     ]
   },
 ];
@@ -21,7 +24,8 @@ const routes: Routes = [
   declarations: [
     ProductComponent,
     ProductDetailComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductTmpComponent,
   ],
   imports: [
     RouterModule.forChild(routes),
